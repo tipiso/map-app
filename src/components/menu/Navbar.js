@@ -1,17 +1,7 @@
 import React from "react";
-// reactstrap components
+import './Navbar.css';
 import {
   UncontrolledCollapse,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  UncontrolledDropdown,
-  FormGroup,
-  Form,
-  Input,
-  InputGroupAddon,
-  InputGroupText,
-  InputGroup,
   NavbarBrand,
   Navbar,
   NavItem,
@@ -20,50 +10,42 @@ import {
   Container
 } from "reactstrap";
 
-function Navigation(){
+function Navigation(props) {
 
-    return(
-        <>
-       <Navbar className="bg-primary" expand="lg">
+  return (
+    <>
+      <Navbar className="bg-custom" expand="lg">
         <Container>
           <NavbarBrand href="#pablo" onClick={e => e.preventDefault()}>
-            Navbar
+            Map-app
           </NavbarBrand>
           <button className="navbar-toggler" id="navbarNav" type="button">
             <span className="navbar-toggler-icon"></span>
           </button>
           <UncontrolledCollapse navbar toggler="#navbarNav">
             <Nav navbar>
-              <NavItem className="active">
-                <NavLink href="#pablo" onClick={e => e.preventDefault()}>
-                  Home <span className="sr-only">(current)</span>
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="#pablo" onClick={e => e.preventDefault()}>
-                  Features
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="#pablo" onClick={e => e.preventDefault()}>
-                  Pricing
-                </NavLink>
-              </NavItem>
-              <NavItem>
+              <NavItem
+                className={props.activeComponent === "Map" ? "active" : ""}>
                 <NavLink
-                  className="disabled"
                   href="#pablo"
-                  onClick={e => e.preventDefault()}
-                >
-                  Disabled
+                  onClick={e => props.changeActiveComponent("Map")}>
+                  Map <span className="sr-only">(current)</span>
+                </NavLink>
+              </NavItem>
+              <NavItem
+                className={props.activeComponent === "Table" ? "active" : ""}>
+                <NavLink
+                  href="#pablo"
+                  onClick={e => props.changeActiveComponent("Table")}>
+                  Modify pointers
                 </NavLink>
               </NavItem>
             </Nav>
           </UncontrolledCollapse>
         </Container>
       </Navbar>
-        </>
-    );
+    </>
+  );
 }
 
 export default Navigation;

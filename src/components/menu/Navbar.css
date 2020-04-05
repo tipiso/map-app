@@ -1,0 +1,23 @@
+.navbar{
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.navbar .navbar-brand{
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.collapse.navbar-collapse{
+    justify-content: center;
+}
+
+
+.navbar-nav .nav-item{
+    font-size: 18px;
+}
+
+.navbar .navbar-nav .nav-item.active .nav-link:not(.btn){
+    background-color: var(--active-item);
+    border: none;
+    border-radius: unset;
+}

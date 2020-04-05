@@ -1,0 +1,25 @@
+.map-section{
+    position: relative;
+  }
+  
+  .mapContainer {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    left: 15px;
+    bottom: 0;
+    }
+  
+  .sidebar {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 20px;
+  background-color: #404040;
+  color: #ffffff;
+  z-index: 1 !important;
+  padding: 6px;
+  font-weight: bold;
+  }
+  
